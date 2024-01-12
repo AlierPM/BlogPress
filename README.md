@@ -1,29 +1,4 @@
-
 <a name="readme-top"></a>
-
-<!--
-HOW TO USE:
-This is an example of how you may give instructions on setting up your project locally.
-
-Modify this file to match your project and remove sections that don't apply.
-
-REQUIRED SECTIONS:
-- Table of Contents
-- About the Project
-  - Built With
-  - Live Demo
-- Getting Started
-- Authors
-- Future Features
-- Contributing
-- Show your support
-- Acknowledgements
-- License
-
-After you're finished please remove all the comments and instructions!
--->
-
-<!-- TABLE OF CONTENTS -->
 
 # 📗 Table of Contents
 
@@ -42,26 +17,26 @@ After you're finished please remove all the comments and instructions!
 - [👥 Authors](#authors)
 - [🔭 Future Features](#future-features)
 - [🤝 Contributing](#contributing)
-- [⭐️ Show your support](#support)
+- [⭐️ Show Your Support](#support)
 - [🙏 Acknowledgements](#acknowledgements)
 - [❓ FAQ](#faq)
 - [📝 License](#license)
 
-<!-- PROJECT DESCRIPTION -->
 
-# 📖 Blog <a name="about-project"></a>
 
-> This blog is a functional website that show the list of  posts and empower readers to interact with them by:
+# 📖 BlogPress <a name="about-project"></a>
 
-- [x] adding comments
+> BlogPress is a functional website that showcases a list of posts and empowers readers to interact with them by:
 
-- [x] liking posts.
+- [x] Adding comments
+
+- [x] Liking posts.
 
 ## 🛠 Built With <a name="built-with"></a>
 
 ### Tech Stack <a name="tech-stack"></a>
 
-> This Project was Build with the following:
+> This project was built with the following:
 
 <details>
   <summary>Client</summary>
@@ -85,12 +60,11 @@ After you're finished please remove all the comments and instructions!
   </ul>
 </details> -->
 
-
 <!-- LIVE DEMO -->
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-> Add a link to your deployed project.
+> Live Demo coming SOON!
 
 - [Coming soon....](https://yourdeployedapplicationlink.com)
 
@@ -102,67 +76,66 @@ After you're finished please remove all the comments and instructions!
 
 > The following steps were used in creating this project:
 
-1 Setup the project by creating a new directory from the generated repository.
+1. Set up the project by creating a new directory from the generated repository.
 
-2 Set up the repository on GitHub and use Gitflow.
+2. Set up the repository on GitHub and use Gitflow.
 
-3 Initialized project with rubocop linters
+3. Initialize the project with Rubocop linters.
 
 > To get a local copy up and running, follow these steps.
 
 ### Prerequisites
 
-In order to run this project you need:
+In order to run this project, you need:
 
-1 Ruby installed (Using Homebrew on macOS machine)
+1. Ruby installed:
+   - On macOS using Homebrew:
 
-```sh
-brew install ruby
-```
+     ```sh
+     brew install ruby
+     ```
 
-2 Rails Installed
+   - On Windows or Linux, follow the installation instructions from [Ruby's official website](https://www.ruby-lang.org/en/documentation/installation/).
 
-```sh
-gem install rails
-```
+2. Rails Installed:
+
+   ```sh
+   gem install rails
+   ```
 
 ### Setup
 
 Clone this repository to your desired folder:
-
 ```sh
-  git clone https://github.com/AlierPM/blog.git
+  git clone https://github.com/AlierPM/BlogPress.git
 ```
 
 ### Install
 
-Install this project with:
+Navigate to the BlogPress directory:
 
 ```sh
-  cd blog
+  cd BlogPress
 ```
 
 ### Usage
 
-To run the project, execute the following command:
-
+Open the project in your preferred code editor:
 ```sh
-   cd blog
-```
-```sh
+   cd BlogPress
    code .
 ```
 
 ### Run project
 
-To run from the local server, run the following command:
+To run from the local server, execute the following command:
 
 ```sh
   rails server
 ```
 ### Run tests
 
-To run tests, run the following command:
+To run tests, execute the following command:
 
 ```sh
   rpec spec
@@ -170,7 +143,7 @@ To run tests, run the following command:
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## Authors
+## 🚀 Meet the Visionary
 
 👤 **Alier Philip Maguet**
 
@@ -180,68 +153,66 @@ To run tests, run the following command:
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- FUTURE FEATURES -->
+---
 
-## 🔭 Future Features <a name="future-features"></a>
+## 🔮 Peek into the Future <a name="future-features"></a>
 
-> Features that will be added to the project.
+> Exciting features awaiting their turn in the limelight.
 
-- [x] **Add user login UI**
-- [x] **Add sign up page**
-- [x] **Add sharing of posts option**
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- CONTRIBUTING -->
-
-## 🤝 Contributing <a name="contributing"></a>
-
-Contributions, issues, and feature requests are welcome!
-
-Feel free to check the [issues page](../../issues/).
+- [x] **User-friendly login interface**
+- [x] **Sparkling sign-up page**
+- [x] **Share-worthy post feature**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- SUPPORT -->
+---
 
-## ⭐️ Show your support <a name="support"></a>
+## 🌟 Join the Adventure <a name="contributing"></a>
 
-> Your contructive reviews help us to improve progressively
+Ready to contribute, share ideas, or spot an issue? We're all ears!
 
-If you like this project...
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- ACKNOWLEDGEMENTS -->
-
-## 🙏 Acknowledgments <a name="acknowledgements"></a>
-
->[Microverse](https://www.microverse.org/?grsf=0gzf37)
-
-I would like to thank the Microverse for offering this topic notch course that has equiped me to be a full stack Ruby on Rails Developer
+Check out the [issues page](../../issues/) to dive into the action.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- FAQ (optional) -->
+---
 
-## ❓ FAQ <a name="faq"></a>
+## 🌈 Be the Wind Beneath Our Wings <a name="support"></a>
 
-> You want to know! Relax! We got you!
+> Your positive vibes and constructive feedback fuel our journey towards continuous improvement.
 
-- **How Long did it take to build this project?**
-
-  - [x] 5 days
-
-- **How many git conflicts did you resolve?**
-
-  - [x] More than five (5) conflicts resolved
+If you resonate with this project...
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- LICENSE -->
+---
 
-## 📝 License <a name="license"></a>
+## 🎉 Gratitude Galore <a name="acknowledgements"></a>
 
-This project is [MIT](./License) licensed.
+> Special thanks to [Microverse](https://www.microverse.org/?grsf=0gzf37) for illuminating the path to becoming a stellar full-stack Ruby on Rails Developer.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+---
+
+## 💡 Curious Minds Ask <a name="faq"></a>
+
+> Burning questions? Let's put out the fire.
+
+- **How swiftly did the magic happen?**
+
+  - [x] Conjured up in just 5 days
+
+- **Count of git conflicts vanquished?**
+
+  - [x] Successfully tamed more than five (5) conflicts
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+---
+
+## 📜 Certified Authentic <a name="license"></a>
+
+This project is licensed under [MIT](./License).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
