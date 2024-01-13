@@ -46,4 +46,20 @@ RSpec.describe User do
       expect(user).to be_valid
     end
   end
+
+  context '#three_most_recent_posts' do
+    it 'should show last three posts for user' do
+      post1 = Post.create(author: user, title: 'Harru', text: 'Hello Abdu....', comments_counter: 0,
+                          likes_counter: 0, created_at: '2024-01-13 21:23:17')
+      post2 = Post.create(author: user, title: 'Harru', text: 'Hello Abdu....', comments_counter: 0,
+                          likes_counter: 0, created_at: '2024-01-13 21:24:17')
+      post3 = Post.create(author: user, title: 'Harru', text: 'Hello Abdu....', comments_counter: 0,
+                          likes_counter: 0, created_at: '2024-01-13 21:24:36')
+      post4 = Post.create(author: user, title: 'Harru', text: 'Hello Abdu....', comments_counter: 0,
+                          likes_counter: 0, created_at: '2024-01-13 21:24:36')
+      expected_posts = [post4, post3, post2, post1]
+      result = user.three_most_recent_posts
+      expect(result).to_not eql(expected_posts)
+    end
+  end
 end
