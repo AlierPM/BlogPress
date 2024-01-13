@@ -1,12 +1,9 @@
+# app/models/comment.rb
 class Comment < ApplicationRecord
   belongs_to :user
   belongs_to :post
 
-  after_save :update_comments_counter
-
-  private
-
-  def update_comments_counter
-    post.update(comments_counter: post.comments.count)
-  end
+  validates :user_id, presence: true
+  validates :text, presence: true
+  validates :post_id, numericality: { only_integer: true }
 end
