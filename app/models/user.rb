@@ -3,12 +3,13 @@ class User < ApplicationRecord
   has_many :comments
   has_many :likes
 
-  after_save :update_post_counter
+  validates :name, presence: true
+  validates :posts_counter, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
 
-  private
+  after_save :update_posts_counter
 
-  def update_post_counter
-    increment!(:posts_counter)
+  def update_posts_counter
+    update_columns(posts_counter: posts.count)
   end
 
   def three_most_recent_posts
