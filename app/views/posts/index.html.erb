@@ -27,7 +27,7 @@
       </div>
 
       <ul>
-        <% post.comments.limit(5).each do |comment| %>
+        <% post.five_most_recent_comments.each do |comment| %>
           <li>
             <strong><%= comment.user.name %></strong>: <%= comment.text %>
           </li>

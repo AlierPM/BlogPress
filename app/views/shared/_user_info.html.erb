@@ -1,7 +1,7 @@
 <div class="w-full flex flex-col items-center">
-  <div class="text-gray-900 bg-gray-300 w-4/5 p-4 rounded-lg shadow-md mb-8">
+  <div class="bg-gray-300 w-4/5 p-4 rounded-lg shadow-md mb-8">
     <div class="flex justify-between mb-4">
-      <div class="mr-4">
+      <div class=" bg-gray-900 text-gray-900 shadow-md mr-4">
         <% if @user.photo.present? %>
           <%= image_tag @user.photo, class: 'w-16 h-16 rounded-full', alt: "#{@user.name}" %>
         <% else %>
@@ -9,14 +9,14 @@
         <% end %>
       </div>
 
-      <div class="justify-evenly w-4/5">
+      <div class=" bg-white shadow-md justify-evenly w-4/5">
         <h3 class="text-lg text-start px-2 font-semibold mb-2 pr-2"><%= @user.name %></h3>
         <p class="text-gray-900 text-end pr-2 ">Number of posts: <%= @user.posts.count %></p>
       </div>
     </div>
 
-    <div class="w-full px-2 justify-start">
+  </div>
+    <div class="w-4/5 bg-gray-300 mb-4 shadow-md text-gray-900 px-2 justify-start">
       <p>Bio: <br/> <%= @user.bio %></p>
     </div>
-  </div>
   </div>
