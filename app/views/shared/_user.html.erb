@@ -1,0 +1,20 @@
+<div >
+  <% @users.each do |user| %>
+    <div class="w-full px-4 mb-8">
+      <div class="flex flex-row justify-evenly p-4 rounded-lg ">
+        <div class="shadow-md flex w-28 items-center ">
+          <% if user.photo.present? %>
+            <%= image_tag user.photo, class: 'w-16 h-16 rounded-full', alt: "#{user.name}" %>
+          <% else %>
+            <%= image_tag 'public/blogpress_user_avatar.png', class: 'w-16 h-16 rounded-full', alt: 'Placeholder Image' %>
+          <% end %>
+        </div>
+
+        <div class="shadow-md rgb(107, 114, 128) w-3/5 flex justify-evenly">
+          <h3 class="text-lg font-semibold mb-2 ml-48"><%= link_to user.name, user_path(user) %></h3>
+          <p class="text-gray-600 pt-8">Number of posts: <%= user.posts.count %></p>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
