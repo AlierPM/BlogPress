@@ -1,2 +1,21 @@
-<h1>Show Each Post</h1>
-<p>Here is shown details about each post</p>
+<div class="w-full flex flex-col items-center">
+ <div class="bg-gray-500 p-4 rounded-lg w-4/5 shadow-md mb-8">
+ <div class="bg-white p-4 rounded-lg shadow-md mb-8">
+      <h4 class="text-lg font-semibold mb-2">Post <%= @post.id %> by <%= @post.author.name %></h4>
+      <div class="flex justify-end">
+        <p class="comment text-gray-600">Comments: <%= @post.comments.count %></p>
+        <p class="likes text-gray-600 ml-4">Likes: <%= @post.likes.count %></p>
+      </div>
+    </div>
+    <p class="post-text text-gray-800 mt-4"><%= @post.text %></p>
+  </div>
+  <div class="w-4/5">
+    <% @post.comments.each do |comment| %>
+      <ul class="mb-2">
+        <strong><%= comment.user.name %></strong>: <%= comment.text %>
+      </ul>
+    <% end %>
+   </div>
+
+ </div>
+</div>

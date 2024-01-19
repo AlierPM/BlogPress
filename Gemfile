@@ -56,6 +56,8 @@ group :development, :test do
   gem 'rails-controller-testing'
   gem 'rspec-rails'
   gem 'shoulda-matchers'
+  gem 'will_paginate'
+  gem 'will_paginate-bootstrap'
 end
 
 group :development do
@@ -76,3 +78,5 @@ group :test do
 end
 
 gem 'rubocop', '>= 1.0', '< 2.0'
+
+gem 'tailwindcss-rails', '~> 2.3'

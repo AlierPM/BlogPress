@@ -1,2 +1,41 @@
-<h1>User's Posts Goes Here</h1>
-<p>Find every post of your favorite author here</p>
+<div class="w-full flex flex-col items-center">
+  <div class="bg-white p-4 rounded-lg w-4/5 shadow-md mb-8">
+    <div class="flex justify-between mb-4">
+      <div class="mr-4">
+        <% if @user.photo.present? %>
+          <%= image_tag @user.photo, class: 'w-16 h-16 rounded-full', alt: "#{@user.name}" %>
+        <% else %>
+          <%= image_tag 'placeholder.jpg', class: 'w-16 h-16 rounded-full', alt: 'Placeholder Image' %>
+        <% end %>
+      </div>
+
+      <div class="justify-evenly w-4/5">
+        <h3 class="text-lg text-start px-2 font-semibold mb-2 pr-2"><%= @user.name %></h3>
+        <p class="text-gray-600 text-end pr-2 ">Number of posts: <%= @user.posts.count %></p>
+      </div>
+    </div>
+  </div>
+
+  <% @posts.each do |post| %>
+    <div class="bg-white p-4 w-4/5 rounded-lg shadow-md mb-4">
+      <h4 class="text-lg mb-2"><%= link_to "Post #{post.id}", user_post_path(@user, post) %> </h4>
+      <p class="text-gray-800"><%= post.text %></p>
+      
+      <div class="flex justify-end mt-4">
+        <p class="text-gray-600  pr-2">Comments: <%= post.comments.count %></p>
+        <p class="text-gray-600">Likes: <%= post.likes.count %></p>
+      </div>
+
+      <ul>
+        <% post.five_most_recent_comments.each do |comment| %>
+          <li>
+            <strong><%= comment.user.name %></strong>: <%= comment.text %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= will_paginate @collection, renderer: BootstrapPagination::Rails %>
+
+</div>

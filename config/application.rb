@@ -1,6 +1,9 @@
 require_relative "boot"
 
 require "rails/all"
+# config/application.rb
+
+require 'will_paginate/array'
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
@@ -18,6 +21,12 @@ module Blogpress
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+    config.load_defaults 6.1
+    config.generators do |g|
+    g.template_engine :haml
+    g.pagination :will_paginate
+    end
+
     config.generators.system_tests = nil 
     config.generators do |g|
     g.test_framework(
