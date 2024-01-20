@@ -10,6 +10,8 @@ class PostsController < ApplicationController
   def show
     @user = User.find(params[:user_id])
     @posts = @user.posts.includes(:comments)
+    @like = Like.new  # Ensure @like is initialized
+    @comment = Comment.new 
   end
 
   def new
