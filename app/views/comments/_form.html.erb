@@ -1,0 +1,8 @@
+<section class: 'w-full'>
+<%= form_with(model: [@post, @comment], url: user_post_comments_path(@post), method: :post) do |form| %>
+  <%= form.label :text %>
+  <%= form.text_area :text, placeholder: "Add Your comment here.....!", class: 'form-control' %>
+
+  <%= form.submit 'Submit', class: 'btn btn-primary mt-3' %>
+<% end %>
+</section>
