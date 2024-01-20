@@ -1,0 +1,9 @@
+
+<%= form_with(model: [@user, @post, @comment], url: user_post_comments_path(@user, @post), method: :post) do |form| %>
+ 
+    <%= form.label :text, class: 'sr-only '%>
+    <%= form.text_area :text, placeholder: "Type your comment here...", class: 'form-control' %>
+ 
+    <%= form.submit 'Submit', class: 'mt-8 btn btn-primary' %>
+
+<% end %>

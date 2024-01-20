@@ -10,6 +10,23 @@ class PostsController < ApplicationController
   def show
     @user = User.find(params[:user_id])
     @posts = @user.posts.includes(:comments)
+    @like = Like.new # Ensure @like is initialized
+    @comment = Comment.new
+  end
+
+  def new
+    @post = Post.new
+  end
+
+  def create
+    @post = Post.new(post_params.merge(author_id: current_user.id, comments_counter: 0, likes_counter: 0))
+
+    if @post.save
+      flash[:notice] = 'Post created successfully.'
+      redirect_to user_post_path(current_user, @post)
+    else
+      render :new
+    end
   end
 
   private
@@ -29,4 +46,8 @@ class PostsController < ApplicationController
       format.js { render 'post_not_found' and return }
     end
   end
+end
+
+def post_params
+  params.require(:post).permit(:title, :text)
 end
