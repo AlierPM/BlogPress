@@ -1,0 +1,17 @@
+<%= form_with(model: @post, url: user_posts_path(@user), method: :post, class: "form") do |form| %>
+  <h3 class="text-xl font-semibold mb-4">Add a New Post</h3>
+
+  <div class="mb-4">
+    <%= form.label :title, class: "block text-gray-700 text-sm font-bold mb-2" %>
+    <%= form.text_field :title, placeholder: "Title", required: true, class: "form-input" %>
+  </div>
+
+  <div class="mb-6">
+    <%= form.label :text, class: "block text-gray-700 text-sm font-bold mb-2" %>
+    <%= form.text_area :text, placeholder: "Type your post here!", rows: 20, required: true, class: "form-textarea" %>
+  </div>
+
+  <div>
+    <%= form.submit "Save", class: "btn btn-primary " %>
+  </div>
+<% end %>
