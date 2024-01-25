@@ -1,17 +1,14 @@
 class UsersController < ApplicationController
-  # before_action :set_user, only: [:show]
-
   def index
     @users = User.all
   end
 
   def show
+    @user = current_user
     @user = User.find(params[:id])
-    @posts = @user.posts
-  end
-
-  def user_posts
-    @user = User.find(params[:id])
-    @posts = @user.posts.includes(:comments, :user)
+    @post = Post.find(params[:id])
+    @user_posts = @user ? @user.posts : []
+    @user_posts = @user.posts
+    @three_most_recent_posts = @user.posts.three_most_recent_posts
   end
 end

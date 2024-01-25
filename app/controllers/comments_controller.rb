@@ -3,6 +3,7 @@ class CommentsController < ApplicationController
 
   def new
     @user = current_user
+    @post = Post.find(params[:post_id]) # Add this line to set the @post variable
     @comment = @post.comments.new
   end
 

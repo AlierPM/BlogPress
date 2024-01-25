@@ -15,7 +15,8 @@ class PostsController < ApplicationController
   end
 
   def new
-    @post = Post.new
+    @user = User.find(params[:user_id])
+    @post = @user.posts.new
   end
 
   def create
@@ -23,8 +24,9 @@ class PostsController < ApplicationController
 
     if @post.save
       flash[:notice] = 'Post created successfully.'
-      redirect_to user_post_path(current_user, @post)
+      redirect_to user_post_path(@current_user, @post)
     else
+      flash[:alert] = 'Error creating post. Please check the form and try again.'
       render :new
     end
   end
