@@ -1,9 +1,11 @@
-
-<%= form_with(model: [@user, @post, @comment], url: user_post_comments_path(@user, @post), method: :post) do |form| %>
+<%= form_with(model: @post, url: new_user_post_path, method: :post) do |form| %>
  
-    <%= form.label :text, class: 'sr-only '%>
-    <%= form.text_area :text, placeholder: "Type your comment here...", class: 'form-control' %>
+    <%= form.label :title, class: 'sr-only' %>
+    <%= form.text_field :title, placeholder: "Enter post title", class: 'form-control' %>
  
-    <%= form.submit 'Submit', class: 'mt-8 btn btn-primary' %>
+    <%= form.label :text, class: 'sr-only' %>
+    <%= form.text_area :text, placeholder: "Write your post here......!", class: 'form-control' %>
+ 
+    <%= form.submit 'Create Post', class: 'mt-8 btn btn-primary' %>
 
 <% end %>

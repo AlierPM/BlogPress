@@ -1,1 +1,20 @@
-<%= render 'form'%>
+<div class="w-full max-w-md mx-auto mt-8">
+
+  <h1 class="text-center text-2xl font-bold mb-4">Create a new post</h1>
+
+  <%= form_with(model: [@user, @post], url: user_posts_path(@user), method: :post, class: 'bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4') do |form| %>
+    <div class="mb-4">
+      <%= form.label :title, class: 'block text-gray-700 text-sm font-bold mb-2' %>
+      <%= form.text_field :title, placeholder: "Enter post title", class: 'form-input mt-1 block w-full' %>
+    </div>
+  
+    <div class="mb-6">
+      <%= form.label :text, class: 'block text-gray-700 text-sm font-bold mb-2' %>
+      <%= form.text_area :text, placeholder: "Write your post here...", class: 'form-input mt-1 block w-full h-32 resize-none' %>
+    </div>
+  
+    <div class="flex items-center justify-between">
+      <%= form.submit 'Create Post', class: 'btn btn-primary' %>
+    </div>
+  <% end %>
+</div>

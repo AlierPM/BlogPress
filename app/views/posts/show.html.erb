@@ -1,26 +1,37 @@
+
+
 <div class="w-full flex flex-col items-center">
- <div class="bg-gray-500 p-4 rounded-lg w-4/5 shadow-md mb-8">
- <div class="bg-white p-4 rounded-lg shadow-md mb-8">
-      <h4 class="text-lg font-semibold mb-2">Post <%= @post.id %> by <%= @post.author.name %></h4>
+  <div class="bg-gray-500 p-4 rounded-lg w-4/5 shadow-md my-8">
+    <!-- app/views/posts/show.html.erb -->
+<% if flash[:notice] %>
+  <div class="bg-green-100 border-l-4 border-green-500 text-green-700 p-4 mb-4" role="alert">
+    <p class="font-bold">Success:</p>
+    <p><%= flash[:notice] %></p>
+  </div>
+<% end %>
+
+<!-- rest of your post show page code -->
+    <div class="bg-white p-4 rounded-lg shadow-md mb-8">
+      <h4 class="text-lg font-semibold mb-2">Post <%= @post.id%> : <%= @post.title %> | by <%= @post.author.name %></h4>
       <div class="flex justify-end">
         <p class="comment text-gray-600">Comments: <%= @post.comments.count %></p>
         <p class="likes text-gray-600 ml-4">Likes: <%= @post.likes.count %></p>
       </div>
     </div>
-    <p class="post-text text-gray-800 mt-4"><%= @post.text %></p>
+    <p class="post-text text-gray-300 mt-4"> <%= @post.text %></p>
+    <%= render 'likes/form' %>
   </div>
+
   <div class="w-4/5">
     <% @post.comments.each do |comment| %>
       <ul class="mb-2">
         <strong><%= comment.user.name %></strong>: <%= comment.text %>
       </ul>
     <% end %>
-   </div>
-   <div class = "flex flex-row w-3/5 justify-between">
-<%= render 'form'%>
-<%=render 'likes/form'%>
-</div>
- </div>
-</div>
+  </div>
 
-
+  <div class="flex flex-row w-3/5 justify-between">
+    <%= render 'comments/form' %>
+  </div>
+  <a href="<%= new_user_post_path %>" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4">Create New Post</a>
+</div>

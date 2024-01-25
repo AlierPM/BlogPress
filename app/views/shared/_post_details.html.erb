@@ -1,0 +1,15 @@
+<div class="bg-white p-4 rounded-lg shadow-md mb-8">
+  <div class="text-xl font-semibold mb-2">
+    <%= link_to post.id, user_post_path(@post) %>
+  </div>
+    Post # <%= post.id %> : <%= post.title %> | by <%= post.author.name %>
+    <%post.text%>
+  </div>
+  <div class="text-gray-800 mt-4">
+    <p><%= truncate(post.text, length: 100) %></p>
+  </div>
+  <div class="flex justify-end text-gray-600 mt-4">
+    <p class="mr-4">Comments: <%= post.comments.count %></p>
+    <p>Likes: <%= post.likes.count %></p>
+  </div>
+</div>

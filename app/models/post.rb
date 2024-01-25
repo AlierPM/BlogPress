@@ -1,4 +1,5 @@
 class Post < ApplicationRecord
+  scope :three_most_recent_posts, -> { order(created_at: :desc).limit(3) }
   belongs_to :author, class_name: 'User', foreign_key: 'author_id'
   has_many :comments
   has_many :likes
