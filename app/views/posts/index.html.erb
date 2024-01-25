@@ -1,5 +1,5 @@
 <div class="w-full flex flex-col items-center">
-  <div class="bg-white p-4 rounded-lg w-4/5 shadow-md mb-8">
+  <div class="bg-white p-4 rounded-lg w-4/5 shadow-md my-8">
     <div class="flex justify-between mb-4">
       <div class="mr-4">
         <% if @user.photo.present? %>
@@ -35,6 +35,5 @@
       </ul>
     </div>
   <% end %>
-
-  <%= will_paginate @collection, renderer: BootstrapPagination::Rails %>
+<%= render 'shared/pagination' %>
 </div>
