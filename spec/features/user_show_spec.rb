@@ -20,6 +20,13 @@ RSpec.describe 'User Show Page', type: :feature do
     expect(page).to have_content(@user.posts.count)
   end
 
+  it 'displays the user\'s first 3 posts' do
+    visit user_path(@user)
+    @user.posts.limit(3).each do |post|
+      expect(page).to have_content(post.title)
+    end
+  end
+
   it 'redirects to the post\'s show page when a user clicks a post' do
     visit user_path(@user)
     expect(page).to have_content(@user.posts.first.title)
