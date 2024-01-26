@@ -1,5 +1,4 @@
 # spec/factories/users.rb
-
 FactoryBot.define do
   sequence :user_name do |n|
     "John Doe #{n}"

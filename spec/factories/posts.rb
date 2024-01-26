@@ -4,7 +4,7 @@ FactoryBot.define do
     sequence(:title) { |n| "Post #{n}" }
     comments_counter { 0 }
     likes_counter { 0 }
-    association :author, factory: :user # This line associates the post with a user
+    association :author, factory: :user # Change this line to use :author instead of :user
 
     factory :post_with_comments do
       transient do
