@@ -26,6 +26,18 @@ RSpec.describe 'User post index page', type: :feature do
     end
   end
 
+  it 'displays the first comments on a post' do
+    visit user_posts_path(@user)
+
+    @posts.each do |post|
+      post.comments.limit(3).each do |comment|
+        expect(page).to have_content(comment.body)
+      end
+    end
+  end
+
+  
+
   it 'displays pagination if there are more posts' do
     # Assuming there are more than 10 posts in the database
     create_list(:post, 15, author: @user)
