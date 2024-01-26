@@ -19,7 +19,7 @@
   <% @posts.each do |post| %>
     <div class="bg-white p-4 w-4/5 rounded-lg shadow-md mb-4">
       <div class ="text-lg flex justify-start">
-      <h4 class=" mb-2"><%= link_to "Post #{post.id}", user_post_path(@user, post) %> </h4>
+      <h4 class=" mb-2"><%= link_to "Post ##{post.id}", user_post_path(@user, post) %> </h4>
       <h4 class ="ml-4"><%= link_to "#{post.title}",user_post_path(@user, post)%>
       </div>
       <p class="text-gray-800"><%= post.text %></p>
