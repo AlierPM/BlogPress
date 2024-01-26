@@ -36,8 +36,6 @@ RSpec.describe 'User post index page', type: :feature do
     end
   end
 
-  
-
   it 'displays pagination if there are more posts' do
     # Assuming there are more than 10 posts in the database
     create_list(:post, 15, author: @user)
