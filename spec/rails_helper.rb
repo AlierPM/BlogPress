@@ -1,10 +1,12 @@
 # This file is copied to spec/ when you run 'rails generate rspec:install'
 require 'spec_helper'
+require 'rails_helper'
 ENV['RAILS_ENV'] ||= 'test'
 require_relative '../config/environment'
 # Prevent database truncation if the environment is production
 abort('The Rails environment is running in production mode!') if Rails.env.production?
 require 'rspec/rails'
+require 'capybara/rspec'
 require 'shoulda/matchers'
 require 'factory_bot'
 
@@ -16,6 +18,7 @@ Shoulda::Matchers.configure do |config|
 end
 
 RSpec.configure do |config|
+  config.include Rails.application.routes.url_helpers
   config.include FactoryBot::Syntax::Methods
 
   # Other configurations...
@@ -75,4 +78,9 @@ RSpec.configure do |config|
   config.filter_rails_from_backtrace!
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
+  config.before(:each, type: :system) do
+    driven_by :selenium_chrome, using: :chrome,
+                                options: { binary:
+                                 '/home/alier/.cache/puppeteer/chrome/linux-115.0.5790.98/chrome-linux64/chrome' }
+  end
 end

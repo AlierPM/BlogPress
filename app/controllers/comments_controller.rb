@@ -3,7 +3,7 @@ class CommentsController < ApplicationController
 
   def new
     @user = current_user
-    @post = Post.find(params[:post_id]) # Add this line to set the @post variable
+    @post = Post.includes(:comments).find(params[:post_id]) # Use eager loading to fetch the associated post
     @comment = @post.comments.new
   end
 

@@ -1,0 +1,28 @@
+<!-- app/views/shared/_pagination.html.erb -->
+<nav aria-label="Page navigation">
+  <ul class="pagination justify-content-center">
+    <% if @posts.previous_page %>
+      <li class="page-item">
+        <%= link_to 'Previous', user_posts_path(@user, page: @posts.previous_page), class: 'page-link' %>
+      </li>
+    <% end %>
+
+    <% (1..@posts.total_pages).each do |page| %>
+      <% if (page == @posts.current_page) || ((page - @posts.current_page).abs <= 1) %>
+        <li class="page-item <%= 'active' if page == @posts.current_page %>">
+          <%= link_to page, user_posts_path(@user, page: page), class: 'page-link' %>
+        </li>
+      <% elsif (page - @posts.current_page).abs == 2 %>
+        <li class="page-item disabled">
+          <span class="page-link">...</span>
+        </li>
+      <% end %>
+    <% end %>
+
+    <% if @posts.next_page %>
+      <li class="page-item">
+        <%= link_to 'Next', user_posts_path(@user, page: @posts.next_page), class: 'page-link' %>
+      </li>
+    <% end %>
+  </ul>
+</nav>
