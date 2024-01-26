@@ -1,19 +1,19 @@
 # spec/factories/posts.rb
 FactoryBot.define do
   factory :post do
-    title { Faker::Lorem.sentence }
-    text { Faker::Lorem.paragraph }
-    comments_counter { Faker::Number.between(from: 0, to: 100) }
-    likes_counter { Faker::Number.between(from: 0, to: 100) }
-    author_id { FactoryBot.create(:user).id } # Assuming you have a user factory
+    sequence(:title) { |n| "Post #{n}" }
+    comments_counter { 0 }
+    likes_counter { 0 }
+    association :author, factory: :user # This line associates the post with a user
 
-    # Add other attributes as needed
+    factory :post_with_comments do
+      transient do
+        comments_count { 5 }
+      end
 
-    # If you have any specific traits or sequences, you can define them here
-    # trait :published do
-    #   published { true }
-    # end
-
-    # sequence(:title) { |n| "Post Title #{n}" }
+      after(:create) do |post, evaluator|
+        create_list(:comment, evaluator.comments_count, post:)
+      end
+    end
   end
 end

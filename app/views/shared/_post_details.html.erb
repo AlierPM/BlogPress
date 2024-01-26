@@ -2,7 +2,7 @@
   <div class="text-xl font-semibold mb-2">
     <%= link_to post.id, user_post_path(@post) %>
   </div>
-    Post # <%= post.id %> : <%= post.title %> | by <%= post.author.name %>
+    Post # <%= post.id %> : <%= link_to "#{post.title}",user_post_post(@post) %> | by <%= post.author.name %>
     <%post.text%>
   </div>
   <div class="text-gray-800 mt-4">
