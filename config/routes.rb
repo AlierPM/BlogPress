@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  devise_for :users, controllers: {
+    sessions: 'users/sessions',
+    passwords: 'users/passwords',
+    registrations: 'users/registrations'
+
+  }
+  root "home#index" 
 
   resources :users, only: [:index, :show, :new, :create] do
     resources :posts, only: [:index, :show, :new, :create] do
@@ -7,5 +14,4 @@ Rails.application.routes.draw do
     end
   end
 
-  root "users#index" 
 end
