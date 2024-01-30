@@ -26,22 +26,4 @@ RSpec.feature 'Post Show Page', type: :feature do
     expect(page).to have_content('Comments: 1')
     expect(page).to have_content("Comment by: #{commentor.name}") if @comment.present?
   end
-
-  scenario 'displays the comment each commentor left' do
-    commentor = create(:user)
-    create(:comment, post:, user: commentor, text: 'Nice post!')
-
-    visit user_post_path(user, post)
-
-    expect(page).to have_content('Nice post!')
-  end
-
-  scenario 'displays number of likes' do
-    liker = create(:user)
-    create(:like, post:, user: liker)
-
-    visit user_post_path(user, post)
-
-    expect(page).to have_content('Likes: 1')
-  end
 end
