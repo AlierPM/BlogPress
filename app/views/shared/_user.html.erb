@@ -6,7 +6,7 @@
           <% if user.photo.present? %>
             <%= image_tag user.photo, class: 'w-16 h-16 rounded-full', alt: "#{user.name}" %>
           <% else %>
-            <%= image_tag 'public/blogpress_user_avatar.png', class: 'w-16 h-16 rounded-full', alt: 'Placeholder Image' %>
+            <%= image_tag 'blogpress_user_avatar.png', class: 'w-16 h-16 rounded-full', alt: 'Placeholder Image' %>
           <% end %>
         </div>
 

@@ -32,7 +32,6 @@ RSpec.feature 'Post Show Page', type: :feature do
     create(:comment, post:, user: commentor, text: 'Nice post!')
 
     visit user_post_path(user, post)
-
     expect(page).to have_content('Nice post!')
   end
 
@@ -41,7 +40,6 @@ RSpec.feature 'Post Show Page', type: :feature do
     create(:like, post:, user: liker)
 
     visit user_post_path(user, post)
-
     expect(page).to have_content('Likes: 1')
   end
 end
