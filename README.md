@@ -151,6 +151,12 @@ To run tests, execute the following command:
 - Twitter: [@AlierPM](https://twitter.com/AlierPM)
 - LinkedIn: [@AlierPM](https://www.linkedin.com/in/alierphilipmaguet/)
 
+👤 **Ojwang Briton**
+
+- GitHub: [@Eccb7](https://github.com/Eccb7)
+- Twitter: [@briton_otieno4](https://twitter.com/briton_otieno4)
+- LinkedIn: [briton-otieno](https://linkedin.com/in/briton-otieno)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ---
