@@ -7,8 +7,8 @@
       <div class="card-body">
         <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
           <div class="form-group">
-            <%= f.label :name, class: "visually-hidden" %>
-            <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "Username", class: "form-control form-control-lg" %>
+            <%= f.label :email, class: "visually-hidden" %>
+            <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Username", class: "form-control form-control-lg" %>
           </div>
 
           <div class="form-group mt-4">
