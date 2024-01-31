@@ -1,7 +1,10 @@
-<!-- FILEPATH: /home/alier/RoR/BlogPress/app/views/home/home.html.erb -->
-
-<h1>Welcome to BlogPress!</h1>
-
-<p>Start sharing your thoughts and ideas with the world.</p>
-
-<%# Add more content or functionality here as needed %>
+<% if user_signed_in? %>
+  <p>Welcome, <%= current_user.email %>!</p>
+  <%= link_to "Create a new post", new_user_post_path(current_user), class: "btn btn-primary" %>
+  <%= link_to "View all posts", user_posts_path(current_user), class: "btn btn-primary" %>
+  <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "btn btn-danger" %>
+<% else %>
+  <!-- Your existing sign up and sign in links go here -->
+  <%= link_to "Sign up", new_user_registration_path, class: "btn btn-primary" %>
+  <%= link_to "Sign in", new_user_session_path, class: "btn btn-primary" %>
+<% end %>

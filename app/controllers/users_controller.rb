@@ -7,7 +7,7 @@ class UsersController < ApplicationController
 
   def show
     @user = current_user
-    @user = User.includes(:posts).find(params[:id]) # Preload associated posts
+    # @user = User.includes(:posts).find(params[:user_id]) # Preload associated posts
     @user_posts = @user ? @user.posts.order('created_at ASC') : []
     @three_most_recent_posts = @user.posts.order('created_at ASC').three_most_recent_posts
     @posts = @user.posts.includes(:comments, :likes).limit(3)
