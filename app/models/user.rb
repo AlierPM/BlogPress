@@ -6,7 +6,8 @@ class User < ApplicationRecord
          :recoverable,
          :rememberable,
          :validatable,
-         :confirmable
+         :confirmable,
+         :trackable
 
   has_many :posts, foreign_key: 'author_id'
   has_many :comments
