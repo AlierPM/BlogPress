@@ -72,9 +72,10 @@ GEM
     base64 (0.2.0)
     bcrypt (3.1.20)
     bindex (0.8.1)
-    bootsnap (1.18.1)
+    bootsnap (1.18.3)
       msgpack (~> 1.2)
     builder (3.2.4)
+    cancancan (3.5.0)
     capybara (3.40.0)
       addressable
       matrix
@@ -96,7 +97,7 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
-    diff-lcs (1.5.0)
+    diff-lcs (1.5.1)
     erubi (1.12.0)
     factory_bot (6.4.6)
       activesupport (>= 5.0.0)
@@ -293,6 +294,7 @@ PLATFORMS
 
 DEPENDENCIES
   bootsnap
+  cancancan
   capybara
   debug
   devise (~> 4.9)
