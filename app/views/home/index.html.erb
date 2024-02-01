@@ -1,0 +1,11 @@
+<div>
+<% if user_signed_in? %>
+<p>Hello, <%= current_user.name %>!</p>
+<h2> Welcome to BlogPress!</h2>
+  <%= link_to "View all posts", user_posts_path(current_user), class: "btn btn-primary" %>
+<% else %>
+  <!-- Your existing sign up and sign in links go here -->
+  <%= link_to "Sign up", new_user_registration_path, class: "btn btn-primary" %>
+  <%= link_to "Sign in", new_user_session_path, class: "btn btn-primary" %>
+<% end %>
+</div>

@@ -1,32 +1,19 @@
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
   <div class="container-fluid">
-  <%= link_to 'BlogPress', @root_path, class: "navbar-brand"%>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">About Us</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Posts
-          </a>
-          <ul class="dropdown-menu">
-          <%= link_to 'Add Post', @new_user_post_path, class: "dropdown-item" %>
-          <%= link_to 'Add Comment', @new_user_post_comment_path, class: "dropdown-item" %>
-          <%= link_to 'Like Post', @new_user_post_like_path, class: "dropdown-item" %>
-          </ul>
-        </li>
-      </ul>
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
+    <div class= "flex flex-row items-center">
+      <%= link_to "BlogPress", root_path, class: "navbar-brand" %>
+      <%= link_to "Authors", users_path, class: "nav-link" if user_signed_in? %>
+    </div>
+
+    <div>
+      <% if user_signed_in? %>
+        <%= link_to "Create a new post", new_user_post_path(current_user), class: "btn btn-primary" %>
+        <%# <%= link_to "See all posts", user_posts_path(current_user), class: "btn btn-primary" %>
+        <%= link_to "Sign Out", destroy_user_session_path, data: {turbo_method: :delete}, class: "btn btn-primary" %>
+      <% else %>
+        <%= link_to "Sign up", new_user_registration_path, class: "btn btn-primary" %>
+        <%= link_to "Sign in", new_user_session_path, class: "btn btn-primary" %>
+      <% end %>
     </div>
   </div>
 </nav>

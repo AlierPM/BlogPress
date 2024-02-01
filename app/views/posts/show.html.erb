@@ -2,15 +2,7 @@
 
 <div class="w-full flex flex-col items-center">
   <div class="bg-gray-500 p-4 rounded-lg w-4/5 shadow-md my-8">
-    <!-- app/views/posts/show.html.erb -->
-<% if flash[:notice] %>
-  <div class="bg-green-100 border-l-4 border-green-500 text-green-700 p-4 mb-4" role="alert">
-    <p class="font-bold">Success:</p>
-    <p><%= flash[:notice] %></p>
-  </div>
-<% end %>
-
-<!-- rest of your post show page code -->
+  
     <div class="bg-white p-4 rounded-lg shadow-md mb-8">
       <h4 class="text-lg font-semibold mb-2">Post <%= "##{@post.id}"%> <%= @post.title %> | Written by: <%= @post.author.name %></h4>
       <div class="flex justify-end">
