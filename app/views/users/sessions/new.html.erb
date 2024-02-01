@@ -6,7 +6,10 @@
       </div>
       <div class="card-body">
         <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-      
+          <div class="form-group">
+            <%= f.label :email, class: "visually-hidden" %>
+            <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Username", class: "form-control form-control-lg" %>
+          </div>
 
           <div class="form-group mt-4">
             <%= f.label :password, class: "visually-hidden" %>
