@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :authenticate_user!, except: %i[index show]
+
 
   def index
     @users = User.all.includes(:posts, :comments, :likes).order('posts.created_at ASC')
